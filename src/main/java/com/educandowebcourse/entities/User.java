@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
-@Entity(name="teste")
+@Entity(name="USERS")
 public class User  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
