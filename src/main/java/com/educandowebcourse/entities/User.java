@@ -3,11 +3,19 @@ package com.educandowebcourse.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity(name="teste")
 public class User  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 	private String email;
 	private String name;
@@ -65,6 +73,12 @@ public class User  implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "User [Id=" + Id + ", email=" + email + ", name=" + name + ", phone=" + phone + ", password=" + password
+				+ "]";
 	}
 
 	@Override
