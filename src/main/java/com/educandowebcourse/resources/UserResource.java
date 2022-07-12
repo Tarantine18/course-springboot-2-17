@@ -17,19 +17,19 @@ import com.educandowebcourse.services.UserService;
 public class UserResource {
 
 	@Autowired
-	private UserService userServices;
+	private UserService services;
 	
 	@GetMapping
 	public ResponseEntity<List<User>> findAll(){
 	 
-		List<User> list = userServices.findAll();
+		List<User> list = services.findAll();
 		return ResponseEntity.ok().body(list);
 		
 	}
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id){
-		User obj = userServices.findById(id);
+		User obj = services.findById(id);
 		return ResponseEntity.ok().body(obj);	}
 	
 }

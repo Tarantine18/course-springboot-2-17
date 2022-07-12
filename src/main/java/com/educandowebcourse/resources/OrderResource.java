@@ -17,19 +17,19 @@ import com.educandowebcourse.services.OrderService;
 public class OrderResource {
 
 	@Autowired
-	private OrderService userServices;
+	private OrderService services;
 	
 	@GetMapping
 	public ResponseEntity<List<Order>> findAll(){
 	 
-		List<Order> list = userServices.findAll();
+		List<Order> list = services.findAll();
 		return ResponseEntity.ok().body(list);
 		
 	}
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Order> findById(@PathVariable Long id){
-		Order obj = userServices.findById(id);
+		Order obj = services.findById(id);
 		return ResponseEntity.ok().body(obj);	}
 	
 }
